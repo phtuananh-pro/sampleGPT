@@ -31,18 +31,13 @@ python -m pip install -r requirements.txt
 ```
 The requirements install NumPy and PyTorch. On Windows/Linux they require the CUDA 13.2 PyTorch build, which also runs on the CPU; macOS uses the standard PyTorch build. You do not need to install the CUDA Toolkit separately. A working NVIDIA driver is required to use an NVIDIA GPU.
 
-Verify the installation (PowerShell; run after activating `.venv`):
 
-```pwsh
-python -c "import numpy, torch; print('NumPy:', numpy.__version__); print('PyTorch:', torch.__version__); print('CUDA available:', torch.cuda.is_available()); print('GPU:', torch.cuda.get_device_name(0) if torch.cuda.is_available() else 'CPU only')"
-```
 ## Repository layout
 
 ```text
 sampleGpt/
 ├── data/
 │   ├── data_shakespeare.txt     # included text dataset
-│   └── README.md                # dataset notes
 ├── models/                      # one folder per training run
 ├── src/
 │   ├── data.py                  # text files, tokenizer, windows, metadata
