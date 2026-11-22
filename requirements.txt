@@ -1,0 +1,11 @@
+# The tutorial uses PyTorch for tensors, automatic differentiation, and the
+# optimizer.  The small tokenizers package handles byte-level BPE vocabulary
+# construction so tokenizer mechanics do not obscure the Transformer lesson.
+numpy>=1.26
+torch==2.15.0+cu132; sys_platform == "win32"
+torch==2.15.0+cu132; sys_platform == "linux"
+torch>=2.15; sys_platform == "darwin"
+tokenizers>=0.21
+
+# Windows/Linux use the CUDA build; macOS uses the standard PyPI build.
+--extra-index-url https://download.pytorch.org/whl/cu132
